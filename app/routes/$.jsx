@@ -7,7 +7,7 @@ import {
   StoryblokComponent,
 } from "@storyblok/react";
 
-export default function RootPage() {
+const PageRoute = () => {
   let story = useLoaderData();
   story = useStoryblokState(story);
 
@@ -16,9 +16,11 @@ export default function RootPage() {
       <StoryblokComponent blok={story.content} />
     </>
   );
-}
+};
 
-export const loader = async ({ params, preview = false }) => {
+export default PageRoute;
+
+export const loader = async ({ params }) => {
   let slug = params["*"] ?? "home";
 
   let sbParams = {
