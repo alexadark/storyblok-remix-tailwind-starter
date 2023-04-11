@@ -60,7 +60,7 @@ export default function App() {
         <Outlet />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.env = ${JSON.stringify(accessToken)}`,
+            __html: `window.env = ${JSON.stringify(env)}`,
           }}
         />
         <ScrollRestoration />
